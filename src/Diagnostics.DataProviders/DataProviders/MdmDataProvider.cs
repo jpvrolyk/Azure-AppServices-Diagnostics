@@ -41,7 +41,7 @@ namespace Diagnostics.DataProviders
             : base(cache, configuration)
         {
             _configuration = configuration;
-            _mdmClient = MdmClientFactory.GetMdmClient(configuration, requestId);
+            _mdmClient = MdmClientFactory.GetMdmClient(configuration, MdmCertLoader.Instance.Cert, requestId);
             Metadata = new DataProviderMetadata
             {
                 ProviderName = "MDM"
